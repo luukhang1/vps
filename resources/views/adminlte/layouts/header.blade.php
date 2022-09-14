@@ -1,5 +1,5 @@
 <header class="main-header">
-    <a href="{{route('home.index')}}" class="logo">
+    <a href="{{route('admin.home.index')}}" class="logo">
         <span class="logo-mini"><b>GV</b></span>
         <span class="logo-lg"><b>Giao Vận</b></span>
     </a>
