@@ -5,5 +5,5 @@
 
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; {{date('Y')}} <a href="#">Citigo.com.vn</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{date('Y')}} <a href="#">ngoc.com</a>.</strong> All rights reserved.
 </footer>

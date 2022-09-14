@@ -1,7 +1,7 @@
 <header class="main-header">
     <a href="{{route('admin.home.index')}}" class="logo">
-        <span class="logo-mini"><b>GV</b></span>
-        <span class="logo-lg"><b>Giao Vận</b></span>
+        <span class="logo-mini"><b>Ad</b></span>
+        <span class="logo-lg"><b>Admin</b></span>
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">
