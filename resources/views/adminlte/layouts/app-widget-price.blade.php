@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@yield('pageTitle') {{$pageHeader or 'Kiotviet Giao Van'}}</title>
+    <title>@yield('pageTitle') {{!empty($pageHeader) ? $pageHeader : 'Kiotviet Giao Van'}}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://cdn-pos1.kiotviet.vn/2021/7/8/17_8/assets/css/mains.702f6dcc.css">
     @yield('css')
