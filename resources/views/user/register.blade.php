@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card card-default">
                 <div class="card-header">Register</div>
 
@@ -74,11 +74,10 @@
                         </div>
                         <div class="form-group row">
                             <span class="col-md-4"></span>
-                            <span class="warning col-md-8">This's temple feature for development. We'll remove that when deploy to production.</span>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-9">
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
