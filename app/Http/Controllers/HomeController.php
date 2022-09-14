@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     public function index()
@@ -11,6 +13,7 @@ class HomeController extends Controller
 
     public function login()
     {
+        Auth::logout();
         return view('user.login');
     }
 
