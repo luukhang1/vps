@@ -14,8 +14,12 @@
 
 
     <div id="demo-wrapper" >
+{{--        <div id="demo-container">--}}
+{{--            <iframe id="frame" src="https://fs-07.web4s.vn"></iframe>--}}
+
+{{--        </div>--}}
         <div id="demo-container">
-            <iframe id="frame" src="https://fs-07.web4s.vn"></iframe>
+            <iframe id="frame" src="https://binhdt6.kvpos.com:59912/newsale/#/login"></iframe>
 
         </div>
     </div>
