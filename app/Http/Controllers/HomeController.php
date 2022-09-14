@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-    }
-
     public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
-    public function senMail()
+    public function login()
     {
+        return view('user.login');
+    }
 
+    public function register()
+    {
+       return view('user.register');
     }
 
 }
