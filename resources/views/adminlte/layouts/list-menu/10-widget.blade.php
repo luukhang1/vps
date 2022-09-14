@@ -32,7 +32,7 @@ $('#send-mail').click(function (e) {
                     $.toaster({message: 'success',title: 'Thông báo'});
                 },
                 error: function (err) {
-                    $.toaster({message: 'success',title: 'Thông báo',priority: 'error'});
+                    $.toaster({message: 'error',title: 'Thông báo',priority: 'error'});
                 }
             })
         })
