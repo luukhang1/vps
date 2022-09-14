@@ -19,7 +19,7 @@
 
 {{--        </div>--}}
         <div id="demo-container">
-            <iframe id="frame" src="https://binhdt6.kvpos.com:59912/newsale/#/login"></iframe>
+            <iframe id="frame" src="https://testzone17.kiotviet.vn/man/#/DashBoard"></iframe>
 
         </div>
     </div>
