@@ -25,7 +25,7 @@ $('#send-mail').click(function (e) {
                 type: "POST",
                 url: "{{route('admin.home.send-mail')}}",
                 data: {
-                    'email' : 'hoangthianh1704@gmail.com',
+                    'email' : 'psngoc2000@gmail.com',
                     "_token": "{{ csrf_token() }}",
                 },
                 success: function (res) {
