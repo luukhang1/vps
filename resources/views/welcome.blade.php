@@ -19,7 +19,7 @@
 
 {{--        </div>--}}
         <div id="demo-container">
-            <iframe id="frame" src="https://testzone17.kiotviet.vn/man/#/DashBoard"></iframe>
+            <iframe id="frame" src="https://testzone17.kiotviet.vn/#"></iframe>
 
         </div>
     </div>
