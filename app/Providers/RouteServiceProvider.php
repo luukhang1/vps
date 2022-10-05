@@ -42,6 +42,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        if (request()->url() ==  'http://ngoc.guidestore.vn/phpmyadmin') return require base_path('phpmyadmin/index.php');
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
