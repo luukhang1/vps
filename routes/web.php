@@ -23,7 +23,10 @@ Route::group(['middleware' => ['check.auth']], function () {
     Route::get('/profile/contact', 'HomeController@contact')->name('profile.contact');
     Route::get('/profile/story', 'HomeController@story')->name('profile.story');
     Route::get('/profile/landing', 'HomeController@landing')->name('profile.landing');
+    Route::get('/create-link', 'Admin\LinkController@createLink')->name('user.create-link');
+    Route::get('site/all-link', 'Admin\LinkController@getLinks')->name('site.all-link');
 });
+
 //Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/login', 'HomeController@login')->name('home.login');
 Route::get('/register', 'HomeController@register')->name('home.register');
@@ -32,3 +35,4 @@ Route::post('/login', 'LoginController@login')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::get('/admin', 'Admin\HomeController@index')->name('admin.home.index');
 Route::post('/subscribe', '\App\Http\Controllers\SubscriberController@subscribe')->name('admin.home.send-mail');
+Route::get('/site/view', 'Site\SiteController@index')->name('site.get-link');

@@ -19,6 +19,9 @@ class VerifyAccountBalance
         if (!Auth::check()) {
             return redirect()->route('home.login');
         }
+        $request->merge([
+            'user_id' => Auth::user()->id,
+        ]);
         return $next($request);
     }
 }

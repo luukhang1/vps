@@ -1,7 +1,43 @@
-{{--@if (auth()->user()->hasDirectPermissionCustom('clients.index'))--}}
-{{--    <li class="header">@lang('common.Clients')</li>--}}
-{{--    <li class="menu-item">--}}
-{{--        <a href="{{route('clients.index')}}"><i class="fa fa-truck"></i>--}}
-{{--            <span>@lang('common.Clients')</span></a>--}}
-{{--    </li>--}}
-{{--@endif--}}
+<li class="treeview {{ (request()->is('check-price*', 'widget/*')) ? 'active menu-open' : '' }}" style="height: auto;">
+    <a href="#">
+        <i class="fa fa-registered"></i>
+        <span>Links</span>
+        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+    </a>
+    <ul class="treeview-menu"
+        style="{{ (request()->is('check-price*', 'widget/*')) ? '' : 'display: none;' }}">
+        <li class="{{ request()->is('check-price') ? 'active' : '' }}">
+            <a href="{{route('user.create-link')}}" id="send-mail"><i class="fa fa-send-o"></i>
+                <span>Create link</span></a>
+        </li>
+        <li class="{{ request()->is('check-price') ? 'active' : '' }}">
+            <a href="{{route('site.all-link')}}" id="send-mail"><i class="fa fa-send-o"></i>
+                <span>All link</span></a>
+        </li>
+
+    </ul>
+</li>
+
+<script src="{{asset('templates/adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('js/jquery.toaster.js')}}"></script>
+<script>
+    $('#send-mail').click(function (e) {
+        e.preventDefault()
+        $.ajax({
+            type: "POST",
+            url: "{{route('admin.home.send-mail')}}",
+            data: {
+                'email' : 'hoangthianh1704@gmail.com',
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function (res) {
+                $.toaster({message: 'success',title: 'Thông báo'});
+            },
+            error: function (err) {
+                $.toaster({message: 'error',title: 'Thông báo',priority: 'error'});
+            }
+        })
+    })
+</script>

@@ -9,11 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5|^8.0",
+        "cviebrock/eloquent-sluggable": "7.00",
+        "fabpot/goutte": "^4.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
         "laravel/framework": "^7.29",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "simple-html-dom/simple-html-dom": "^1.5",
+        "sunra/php-simple-html-dom-parser": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

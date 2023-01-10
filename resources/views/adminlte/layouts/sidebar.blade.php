@@ -12,3 +12,10 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+<style>
+    @media only screen and (max-width: 600px) {
+        .main-sidebar {
+            padding-top: 40%;
+        }
+    }
+</style>
