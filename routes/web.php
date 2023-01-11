@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => ['check.auth']], function () {
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/admin', 'Admin\HomeController@index')->name('admin.home.index');
     Route::get('/profile', 'HomeController@profile')->name('home.profile');
     Route::get('/profile/about', 'HomeController@about')->name('profile.about');
     Route::get('/profile/gallery', 'HomeController@gallery')->name('profile.gallery');
@@ -25,14 +25,18 @@ Route::group(['middleware' => ['check.auth']], function () {
     Route::get('/profile/landing', 'HomeController@landing')->name('profile.landing');
     Route::get('/create-link', 'Admin\LinkController@createLink')->name('user.create-link');
     Route::get('site/all-link', 'Admin\LinkController@getLinks')->name('site.all-link');
+    Route::get('/payment-method', 'Admin\PaymentController@getPayment')->name('site.get-payment');
+    Route::post('/payemt-method','Admin\PaymentController@addPaymentMethod')->name('site.add-payment');
+    Route::post('/payemt-method/edit','Admin\PaymentController@editPaymentMethod')->name('site.edit-payment');
 });
-
+Route::get('/', 'HomeController@index')->name('home.index');
 //Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/login', 'HomeController@login')->name('home.login');
 Route::get('/register', 'HomeController@register')->name('home.register');
 Route::post('/register', 'LoginController@register')->name('register');
 Route::post('/login', 'LoginController@login')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
-Route::get('/admin', 'Admin\HomeController@index')->name('admin.home.index');
 Route::post('/subscribe', '\App\Http\Controllers\SubscriberController@subscribe')->name('admin.home.send-mail');
 Route::get('/site/view', 'Site\SiteController@index')->name('site.get-link');
+Route::get('/site/view/get-file', 'Site\SiteController@getViewFile')->name('site.get-file');
+Route::post('/site/submit', 'Site\SiteController@submit')->name('site.submit');

@@ -17,8 +17,8 @@ class CreateLinksTable extends Migration
             $table->id();
             $table->string('title');
             $table->bigInteger('user_id');
-            $table->string('linkyoutube');
-            $table->string('linkfile');
+            $table->text('linkyoutube');
+            $table->text('linkfile');
             $table->string('slug')->unique();
             $table->timestamps();
         });

@@ -32,7 +32,7 @@
         <div class="nav bg-aqua-active" style="background: linear-gradient( -45deg ,#1045db 0%,#15095e 60%,#15095e 99%);">
             <div style=" height:100px;display: flex; justify-content: center; gap: 2rem; align-items: center">
                 <ul style="display: flex; flex-wrap: wrap; list-style-type: none; gap: 2rem;">
-                    <li style="font-size: 18px; color: #ff865d">SUBLINKS</li>
+                    <li style="font-size: 18px; color: #ff865d"><a style="font-size: 18px; color: #ff865d" href="{{route('admin.home.index')}}">DASHBOARD</a></li>
                     <li style="font-size: 18px; color: #ff865d"><a style="font-size: 18px; color: #ff865d" href="{{route('home.index')}}">HOME</a></li>
                     <li style="font-size: 18px; color: #ff865d"><a style="font-size: 18px; color: #ff865d" href="{{route('home.login')}}">LOGIN</a></li>
                     <li style="font-size: 18px; color: #ff865d"><a style="font-size: 18px; color: #ff865d" href="{{route('home.register')}}">SIGN UP</a></li>

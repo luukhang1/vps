@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/site/create-link', 'Admin\LinkController@createLinkAjax')->name('site.create-link');
+Route::post('/site/payment-method/del', 'Admin\PaymentController@delpayment')->name('site.del-payment');
 

@@ -39,7 +39,7 @@ class LinkController extends Controller
                 'status' => 'error',
                 'message' => 'cocainit',
                 'data' => []
-            ], 200);
+            ], 500);
         }
 
     }

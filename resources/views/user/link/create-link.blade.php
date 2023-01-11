@@ -98,7 +98,7 @@
                 toastr.success('thanh cong')
                 setTimeout( () => {
                     window.location.href = '/'
-                }, 2000)
+                }, 1000)
             },
             error: function (e) {
                 toastr.error('that bai')

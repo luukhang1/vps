@@ -21,9 +21,9 @@
                 <tr class="bg-light">
                     <th scope="col" width="5%"><input class="form-check-input" type="checkbox"></th>
                     <th scope="col" width="5%">#</th>
-                    <th scope="col" width="40%">Date</th>
-                    <th scope="col" width="10%">Link File</th>
-                    <th scope="col" width="20%">Link Youtube</th>
+                    <th scope="col" width="20%">Date</th>
+                    <th scope="col" width="25%">Link File</th>
+                    <th scope="col" width="25%">Link Youtube</th>
                     <th scope="col" width="20%">domain</th>
 {{--                    <th scope="col" class="text-end" width="20%"><span>Revenue</span></th>--}}
                 </tr>
@@ -33,9 +33,9 @@
                     <tr>
                         <th scope="row"><input class="form-check-input" type="checkbox"></th>
                         <td>{{$link->id}}</td>
-                        <td width="40%">{{$link->created_at}}</td>
-                        <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">{{$link->linkfile}}</span></td>
-                        <td><img src="https://i.imgur.com/VKOeFyS.png" width="25">{{$link->linkyoutube}}</td>
+                        <td width="20%">{{$link->created_at}}</td>
+                        <td style="word-break: break-all" width="25%">{{$link->linkfile}}</td>
+                        <td  width="25%">{{$link->linkyoutube}}</td>
                         <td>/site/view?id={{$link->slug}}</td>
 {{--                        <td class="text-end"><span class="fw-bolder">$0.99</span> <i class="fa fa-ellipsis-h  ms-2"></i></td>--}}
                     </tr>
