@@ -52,6 +52,12 @@
                 </span>
             </div>
             <form id="createlink">
+                <div class="form-group" id="__link" style="display: none">
+                    <label for="_link">Link ++</label>
+                    <input style="border-radius: 20px; height: 50px"
+                           name="_link"
+                           type="text" class="form-control" id="_link" placeholder="Enter your link ..">
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Link youtube</label>
                     <input style="border-radius: 20px; height: 50px"
@@ -64,12 +70,6 @@
                     <input style="border-radius: 20px; height: 50px"
                            required name="linkfile"
                         type="text" class="form-control" id="link2" placeholder="Enter your link file">
-                </div>
-                <div class="form-group" id="__link" style="display: none">
-                    <label for="_link">Link ++</label>
-                    <input style="border-radius: 20px; height: 50px"
-                           name="_link"
-                           type="text" class="form-control" id="_link" placeholder="Enter your link ..">
                 </div>
                 <div style="width: 100%; display: flex; justify-content: center; padding-top: 20px">
                     <button style="background-image: linear-gradient(to right, purple, pink);font-size:18px;border-radius: 25px; height: 50px; width: 200px"
