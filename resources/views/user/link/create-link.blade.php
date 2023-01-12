@@ -110,7 +110,7 @@
             success: function (data) {
                 toastr.success('thanh cong')
                 setTimeout( () => {
-                    window.location.href = '/'
+                    window.location.href = '{{route('site.all-link')}}'
                 }, 1000)
             },
             error: function (e) {
