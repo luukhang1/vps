@@ -25,7 +25,7 @@ class CrawlData extends Command
     {
         $link = Link::query()->first();
         File::put('test.html',
-            view('site.get-link')
+            view('site.get-file')
                 ->with(["link" => $link])
                 ->render()
         );
