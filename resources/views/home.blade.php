@@ -22,7 +22,7 @@
                 background-color: #0b3e6f; border-radius: 10px; margin: 10px; display: flex; justify-content: space-between; align-items: center; padding: 10px">
                     <div style="display: flex; flex-direction: column; align-items: center">
                         <span style="color: white"> Total view</span>
-                        <span style="color: white">0</span>
+                        <span style="color: white">{{!empty($money) ? $money->view : 0}}</span>
                     </div>
                     <span>
                         <svg color="white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-binoculars-fill" viewBox="0 0 16 16">
@@ -35,7 +35,7 @@
                 background-color: #0b3e6f; border-radius: 10px; margin: 10px; display: flex; justify-content: space-between; align-items: center; padding: 10px">
                     <div style="display: flex; flex-direction: column; align-items: center">
                         <span style="color: white"> Total money</span>
-                        <span style="color: white">0</span>
+                        <span style="color: white">{{!empty($money) ? $money->view * $money->price : 0}}</span>
                     </div>
                     <span>
                        <svg color="white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">

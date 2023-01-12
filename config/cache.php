@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,10 @@ return [
             'table' => 'cache',
             'connection' => null,
         ],
-
+        'redis' => [
+            'driver' => 'redis',
+            'connection' => 'default',
+        ],
         'file' => [
             'driver' => 'file',
             'path' => storage_path('framework/cache/data'),

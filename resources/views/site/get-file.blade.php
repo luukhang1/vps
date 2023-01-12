@@ -96,7 +96,6 @@
                 data: { _token: '{{csrf_token()}}',id: id},
                 success: function (data) {
                     console.log(data)
-                    alert(data.ip);
                 },
             })
             check = false

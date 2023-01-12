@@ -21,6 +21,7 @@ class VerifyAccountBalance
         }
         $request->merge([
             'user_id' => Auth::user()->id,
+            'role' => Auth::user()->role
         ]);
         return $next($request);
     }

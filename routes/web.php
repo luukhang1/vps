@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['check.auth']], function () {
     Route::get('/admin', 'Admin\HomeController@index')->name('admin.home.index');
+    Route::get('/admin/config', 'Admin\HomeController@configPrice')->name('admin.home.config');
     Route::get('/profile', 'HomeController@profile')->name('home.profile');
     Route::get('/profile/about', 'HomeController@about')->name('profile.about');
     Route::get('/profile/gallery', 'HomeController@gallery')->name('profile.gallery');

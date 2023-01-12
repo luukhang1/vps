@@ -1,21 +1,23 @@
 @extends('users.layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card card-default">
-                <div class="card-header">Register</div>
+<div class="container" style="height: 100vh; background-color: #d2d6de; width: 100vw; margin: 0">
+    <div class="row justify-content-center"
+         style="height: 100%;align-items: center; background-color: #d2d6de; width: 101vw">
+        <div class="col-md-6" style="max-width: 500px;">
+            <div class="card " style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                <div class=""
+                     style="text-align: center; height: 50px;font-size: 16px; font-weight: 500"
+                >Sign up your account</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div >
+                    <form method="POST" action="{{ route('register') }}" id="form-register">
                         @csrf
+                        <div class="form-group">
+                            <label for="name" class="">Name</label>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                            <div >
+                                <input placeholder="Inter Name" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
@@ -25,11 +27,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                        <div class="form-group">
+                            <label for="email" >E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                            <div>
+                                <input placeholder="Inter Email" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -51,11 +53,11 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                        <div class="form-group">
+                            <label for="password">Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                            <div >
+                                <input placeholder="Inter Password" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -65,20 +67,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                        <div class="form-group">
+                            <label for="password-confirm" >Confirm Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            <div >
+                                <input placeholder="Inter Password Confirm" id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group">
                             <span class="col-md-4"></span>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-9">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group mb-0">
+                            <div class="">
+                                <button type="submit" class="btn btn-primary form-control" style="font-size: 16px">
                                     Register
                                 </button>
                             </div>
@@ -90,3 +92,29 @@
     </div>
 </div>
 @endsection
+<style>
+    #form-register > * {
+        font-size: 16px !important;
+    }
+    #form-register  input {
+        height: 50px;
+        border-radius: 15px;
+    }
+    #form-register  button {
+        height: 50px;
+        border-radius: 15px;
+    }
+    #form-register  label {
+       color: #7e7e7e;
+    }
+    input::placeholder {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #7e7e7e;
+    }
+    .card {
+        padding: 30px;
+        padding-bottom: 50px;
+    }
+</style>
+

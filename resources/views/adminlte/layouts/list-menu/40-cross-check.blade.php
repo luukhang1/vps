@@ -1,12 +1,42 @@
-{{--@if (auth()->user()->hasDirectPermissionCustom('cross-check.index'))--}}
-{{--    <li class="header">@lang('common.Checkers')</li>--}}
-{{--    <li class="menu-item">--}}
-{{--        <a href="{{route('cross-check.index')}}"><i class="fa fa-check-square-o"></i>--}}
-{{--            <span>@lang('common.Checkers') HVC</span></a>--}}
-{{--    </li>--}}
-{{--@endif--}}
-{{--@if (auth()->user()->hasDirectPermissionCustom('cross-check-shop.index'))--}}
-{{--    <li class="menu-item">--}}
-{{--        <a href="{{route('cross-check-shop.index')}}"><i class="fa fa-check-square-o"></i> <span>@lang('common.Checkers') GH</span></a>--}}
-{{--    </li>--}}
-{{--@endcan--}}
+
+@if(\Illuminate\Support\Facades\Auth::user()->role == 1)
+    <li class="treeview {{ (request()->is('check-price*', 'widget/*')) ? 'active menu-open' : '' }}" style="height: auto;">
+        <a href="#">
+            <i class="fa fa-registered"></i>
+            <span>Config</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu"
+            style="{{ (request()->is('check-price*', 'widget/*')) ? '' : 'display: none;' }}">
+            <li class="{{ request()->is('check-price') ? 'active' : '' }}">
+                <a href="{{route('site.get-payment')}}" id="send-mail"><i class="fa fa-send-o"></i>
+                    <span>All Config</span></a>
+            </li>
+
+        </ul>
+    </li>
+@endif
+
+<script src="{{asset('templates/adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('js/jquery.toaster.js')}}"></script>
+<script>
+    $('#send-mail').click(function (e) {
+        e.preventDefault()
+        $.ajax({
+            type: "POST",
+            url: "{{route('admin.home.send-mail')}}",
+            data: {
+                'email' : 'hoangthianh1704@gmail.com',
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function (res) {
+                $.toaster({message: 'success',title: 'Thông báo'});
+            },
+            error: function (err) {
+                $.toaster({message: 'error',title: 'Thông báo',priority: 'error'});
+            }
+        })
+    })
+</script>
