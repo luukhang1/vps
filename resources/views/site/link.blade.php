@@ -36,7 +36,7 @@
                         <td width="20%">{{$link->created_at}}</td>
                         <td style="word-break: break-all" width="25%">{{$link->linkfile}}</td>
                         <td  width="25%">{{$link->linkyoutube}}</td>
-                        <td>/site/view?id={{$link->slug}} <i class="fa fa-copy" onclick="copy('{{$link->slug}}')"></i></td>
+                        <td>/site/view?id={{$link->slug}} <i class="fa fa-copy" style="color: #0b93d5" onclick="copy('{{$link->slug}}')"></i></td>
 {{--                        <td class="text-end"><span class="fw-bolder">$0.99</span> <i class="fa fa-ellipsis-h  ms-2"></i></td>--}}
                     </tr>
                 @endforeach
