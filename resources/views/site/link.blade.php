@@ -36,7 +36,7 @@
                         <td width="20%">{{$link->created_at}}</td>
                         <td style="word-break: break-all" width="25%">{{$link->linkfile}}</td>
                         <td  width="25%">{{$link->linkyoutube}}</td>
-                        <td>/site/view?id={{$link->slug}}</td>
+                        <td>/site/view?id={{$link->slug}} <i class="fa fa-copy" onclick="copy('{{$link->slug}}')"></i></td>
 {{--                        <td class="text-end"><span class="fw-bolder">$0.99</span> <i class="fa fa-ellipsis-h  ms-2"></i></td>--}}
                     </tr>
                 @endforeach
@@ -54,4 +54,36 @@
         }
     }
 </style>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+<script>
+
+    function copy(data) {
+        let text = data
+        text = '/site/view?id='+data
+        toastr.success('copy done')
+        if (window.clipboardData && window.clipboardData.setData) {
+            // IE: prevent textarea being shown while dialog is visible
+            return window.clipboardData.setData("Text", text);
+
+        } else if (document.queryCommandSupported &&
+            document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            // Prevent scrolling to bottom of page in MS Edge
+            textarea.style.position = "fixed";
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                // Security exception may be thrown by some browsers
+                return document.execCommand("copy");
+            } catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return false;
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+    }
+</script>
 
