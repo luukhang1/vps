@@ -20,6 +20,13 @@ class SiteController extends Controller
         return view('site.get-link')->with(['link' => $link]);
     }
 
+    public function getLink(Request $request)
+    {
+        $domain = $request->get('id');
+        $link = Link::query()->where('slug', trim($domain))->first();
+        return view('site.get-link-add')->with(['link' => $link]);
+    }
+
     public function getViewFile(Request $request)
     {
         $checkUrl = $request->get('check-url');

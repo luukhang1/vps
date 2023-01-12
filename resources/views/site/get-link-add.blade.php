@@ -39,7 +39,7 @@
                <div style="align-items:center; padding-top: 20%; background: #dde1e7; height: 100%; display: flex; flex-direction: column; gap: 2rem; border-radius: 5px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; ">
                    <a onclick="getLink(this)" id="subscribe" style="text-decoration: none;
                    width: 90%;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;background: #f2f3f7; display: flex; justify-content: space-between; align-items: center"
-                      href="{{$link->linkyoutube}}"
+                      href="{{$link->_link}}"
                        class="step linky buttonpanel buttonpanel-block btn-lg locked-action-link" target="_blank">
                    <span class="subtlepanel">
                        <svg color="red" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
@@ -117,13 +117,7 @@
             $('#loader').hide()
             $('#checked').show()
             $('#get-link').css('background','#f2f3f7')
-            let check = '{{$link->_link}}'
-            let url = ''
-            if (check.trim()) {
-                url  = '{{route('site.get-link-add')}}' + '?id='+id
-            } else {
-                url = '{{route('site.get-file')}}' + '?check-url=true&id='+id
-            }
+            let url = '{{route('site.get-file')}}' + '?check-url=true&id='+id
             $('#get-link').attr("href", url)
         }, 5000);
     }

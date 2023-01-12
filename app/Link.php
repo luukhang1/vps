@@ -9,7 +9,7 @@ class Link extends Model
     //
     use Sluggable;
     public $timestamps = true;
-    protected $fillable = ['title', 'linkfile', 'linkyoutube','title', 'user_id'];
+    protected $fillable = ['title', 'linkfile', 'linkyoutube','title', 'user_id', '_link'];
     public function sluggable()
     {
         return [

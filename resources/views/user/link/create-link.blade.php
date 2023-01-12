@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +42,15 @@
 </div>
 <div class="bg-aqua-active" style="width: 100%; height: 80%; padding-top: 10%; background: linear-gradient( -45deg ,#1045db 0%,#15095e 60%,#15095e 99%);">
     <div  style="display: flex; justify-content: center">
+
         <div id="form-create-link" class="col-lg-6 col-md-6 col-xs-6">
+            <div style="width: 100%">
+                <span onclick="addNewLink()" id="_addlink"
+                    style="width: 300px;  height: 50px;
+                    background-color: #f17e4d; border-radius: 3px;cursor: pointer">
+                + Add Link like/sub
+                </span>
+            </div>
             <form id="createlink">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Link youtube</label>
@@ -57,6 +64,12 @@
                     <input style="border-radius: 20px; height: 50px"
                            required name="linkfile"
                         type="text" class="form-control" id="link2" placeholder="Enter your link file">
+                </div>
+                <div class="form-group" id="__link" style="display: none">
+                    <label for="_link">Link ++</label>
+                    <input style="border-radius: 20px; height: 50px"
+                           name="_link"
+                           type="text" class="form-control" id="_link" placeholder="Enter your link ..">
                 </div>
                 <div style="width: 100%; display: flex; justify-content: center; padding-top: 20px">
                     <button style="background-image: linear-gradient(to right, purple, pink);font-size:18px;border-radius: 25px; height: 50px; width: 200px"
@@ -105,5 +118,17 @@
             }
         })
     })
+    let click = 1;
+    function addNewLink(e) {
+        click++;
+        if (click % 2 == 0 ) {
+            $('#_addlink').css('background', 'white')
+            $('#__link').show()
+        } else {
+            $('#_addlink').css('background', '#f17e4d')
+            $('#__link').hide()
+        }
+
+    }
 </script>
 

@@ -39,5 +39,6 @@ Route::post('/login', 'LoginController@login')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::post('/subscribe', '\App\Http\Controllers\SubscriberController@subscribe')->name('admin.home.send-mail');
 Route::get('/site/view', 'Site\SiteController@index')->name('site.get-link');
+Route::get('/site/view/get-link', 'Site\SiteController@getLink')->name('site.get-link-add');
 Route::get('/site/view/get-file', 'Site\SiteController@getViewFile')->name('site.get-file');
 Route::post('/site/submit', 'Site\SiteController@submit')->name('site.submit');

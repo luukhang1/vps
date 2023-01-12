@@ -21,6 +21,7 @@ class LinkController extends Controller
                 throw new \Exception('error');
             }
             $data = $request->all();
+            $_link = $data['_link'];
             $dataInsert = [
                 'user_id' => intval($data['user_id']),
                 'linkfile' => $data['linkfile'],
@@ -28,6 +29,9 @@ class LinkController extends Controller
                 'title' => time(),
                 'slug' => SlugService::createSlug(Link::class, 'slug', time())
             ];
+            if (!empty($_link)) {
+                $dataInsert['_link'] = $_link;
+            }
             Link::query()->create($dataInsert);
             return response()->json([
                 'status' => 'success',
