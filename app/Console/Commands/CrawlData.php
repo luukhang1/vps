@@ -3,9 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Console\CrawlTable;
+use App\Link;
 use App\Models\Truyen;
 use Goutte\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Sunra\PhpSimple\HtmlDomParser;
 
 class CrawlData extends Command
@@ -21,6 +23,12 @@ class CrawlData extends Command
 
     public function handle()
     {
+        $link = Link::query()->first();
+        File::put('test.html',
+            view('site.get-link')
+                ->with(["link" => $link])
+                ->render()
+        );
         try {
             $client = new Client();
             $dataCrawl = [];

@@ -54,4 +54,24 @@ class LinkController extends Controller
         return view('site.link')->with(['links' => $links]);
     }
 
+    public function getLinkAjax(Request $request)
+    {
+        try {
+            $id = $request->get('id') ?? '';
+            $link = Link::query()->where('slug', $id)->first();
+            if (!empty($link)) {
+                return response()->json([
+                    'data' => $link
+                ]);
+            } else {
+                throw new \Exception('khobng co du lieu');
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], 500);
+        }
+
+    }
+
 }
