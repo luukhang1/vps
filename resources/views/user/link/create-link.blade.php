@@ -126,6 +126,7 @@
             $('#__link').show()
         } else {
             $('#_addlink').css('background', '#f17e4d')
+            $('_link').val('')
             $('#__link').hide()
         }
 
