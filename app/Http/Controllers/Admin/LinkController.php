@@ -50,7 +50,7 @@ class LinkController extends Controller
     public function getLinks(Request $request)
     {
         $user_id = $request->get('user_id');
-        $links = Link::query()->where('user_id',$user_id)->paginate(10);
+        $links = Link::query()->where('user_id',$user_id)->orderByDesc('id')->paginate(10);
         return view('site.link')->with(['links' => $links]);
     }
 
