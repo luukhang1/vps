@@ -60,7 +60,7 @@
 
     function copy(data) {
         let text = data
-        text = '/site/view?id='+data
+        text = 'bblink.online/site/view?id='+data
         toastr.success('copy done')
         if (window.clipboardData && window.clipboardData.setData) {
             // IE: prevent textarea being shown while dialog is visible
